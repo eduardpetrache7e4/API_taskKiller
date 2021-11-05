@@ -22,6 +22,6 @@ public class Task {
     private LocalDate startDate;
 
     //una tarea puede estar solo en una hoja
-    @ManyToOne
-    private Sheet sheet;
+    //@ManyToOne
+   // private Sheet sheet;
 }
