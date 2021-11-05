@@ -18,7 +18,7 @@ public class Sheet {
     private String name;
 
     //varias tareas pueden ser parte de una hoja
-    @OneToMany(mappedBy = "user", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonManagedReference
-    private List<Task> tasks=new ArrayList<>();
+//    @OneToMany(mappedBy = "user", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+//    @JsonManagedReference
+//    private List<Task> tasks=new ArrayList<>();
 }
