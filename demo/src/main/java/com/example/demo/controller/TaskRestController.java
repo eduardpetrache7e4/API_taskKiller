@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("/api/tasks")
+@RestController
+@RequestMapping("/tasks")
 public class TaskRestController {
     private CreateTask createTask;
     private GetTask getTask;
@@ -30,6 +30,13 @@ public class TaskRestController {
         this.updateTask = updateTask;
         this.deleteTask = deleteTask;
     }
+
+    @RequestMapping("/hello")
+    public String hello(){
+
+        return "hi human";
+    }
+
 
     @GetMapping("/")
     List<Task> get(){
