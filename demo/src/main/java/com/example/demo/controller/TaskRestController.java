@@ -5,6 +5,8 @@ import com.example.demo.case_use.DeleteTask;
 import com.example.demo.case_use.GetTask;
 import com.example.demo.case_use.UpdateTask;
 import com.example.demo.entity.Task;
+import com.example.demo.repository.TaskRepository;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -19,16 +21,19 @@ public class TaskRestController {
     private GetTask getTask;
     private UpdateTask updateTask;
     private DeleteTask deleteTask;
+    private TaskRepository taskRepository;
 
 
     public TaskRestController(CreateTask createTask,
                               GetTask getTask,
                               UpdateTask updateTask,
-                              DeleteTask deleteTask) {
+                              DeleteTask deleteTask,
+                              TaskRepository taskRepository) {
         this.createTask = createTask;
         this.getTask = getTask;
         this.updateTask = updateTask;
         this.deleteTask = deleteTask;
+        this.taskRepository=taskRepository;
     }
 
 
@@ -59,4 +64,10 @@ public class TaskRestController {
     public ResponseEntity<String>function(){
         return new ResponseEntity("Hola desde el controller",HttpStatus.OK);
     }
+
+    @GetMapping("/pageable")
+    List<Task> getTaskPageable(@RequestParam int page, @RequestParam int size){
+        return taskRepository.findAll(PageRequest.of(page,size)).getContent();
+    }
+
 }
