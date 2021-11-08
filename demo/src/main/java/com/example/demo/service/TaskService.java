@@ -32,11 +32,11 @@ public class TaskService {
         return
                 taskRepository.findById(id)
                         .map(
-                                Task->{
-                                    Task.setContent(newTask.getContent());
-                                    Task.setStartDate(newTask.getStartDate());
+                                task->{
+                                    task.setContent(newTask.getContent());
+                                    task.setStartDate(newTask.getStartDate());
 
-                                    return taskRepository.save(Task);
+                                    return taskRepository.save(task);
                                 }
                         ).get();
 

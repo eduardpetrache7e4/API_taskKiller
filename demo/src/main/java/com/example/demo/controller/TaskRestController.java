@@ -31,11 +31,6 @@ public class TaskRestController {
         this.deleteTask = deleteTask;
     }
 
-    @RequestMapping("/hello")
-    public String hello(){
-
-        return "hi human";
-    }
 
 
     @GetMapping("/")
@@ -59,7 +54,7 @@ public class TaskRestController {
         return new ResponseEntity(updateTask.update(newTask,id),HttpStatus.OK);
     }
 
-    @RequestMapping
+    @RequestMapping("/prueba")
     @ResponseBody
     public ResponseEntity<String>function(){
         return new ResponseEntity("Hola desde el controller",HttpStatus.OK);

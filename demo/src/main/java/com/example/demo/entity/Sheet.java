@@ -1,11 +1,13 @@
 package com.example.demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 @Entity
 @Table(name="Sheet")
 public class Sheet {
@@ -18,7 +20,11 @@ public class Sheet {
     private String name;
 
     //varias tareas pueden ser parte de una hoja
-//    @OneToMany(mappedBy = "user", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JsonManagedReference
-//    private List<Task> tasks=new ArrayList<>();
+    @OneToMany(mappedBy = "user", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+     @JsonManagedReference
+     private List<Task> tasks=new ArrayList<>();
+
+    public Sheet(String name) {
+        this.name = name;
+    }
 }
