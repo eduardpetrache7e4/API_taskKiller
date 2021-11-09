@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name="Sheet")
+@RequiredArgsConstructor
 public class Sheet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) //se crea id unico
@@ -20,7 +22,7 @@ public class Sheet {
     private String name;
 
     //varias tareas pueden ser parte de una hoja
-    @OneToMany(mappedBy = "user", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sheet", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
      @JsonManagedReference
      private List<Task> tasks=new ArrayList<>();
 
