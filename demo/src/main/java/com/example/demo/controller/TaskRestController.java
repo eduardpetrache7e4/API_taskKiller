@@ -12,6 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -69,5 +71,7 @@ public class TaskRestController {
     List<Task> getTaskPageable(@RequestParam int page, @RequestParam int size){
         return taskRepository.findAll(PageRequest.of(page,size)).getContent();
     }
+
+
 
 }
