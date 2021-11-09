@@ -21,12 +21,12 @@ public class Sheet {
     @Column(length = 50)
     private String name;
 
-    //varias tareas pueden ser parte de una hoja
-    @OneToMany(mappedBy = "sheet", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+     //varias tareas pueden ser parte de una hoja
+     @OneToMany(mappedBy = "sheet", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
      @JsonManagedReference
      private List<Task> tasks=new ArrayList<>();
 
-    public Sheet(String name) {
+     public Sheet(String name) {
         this.name = name;
     }
 }

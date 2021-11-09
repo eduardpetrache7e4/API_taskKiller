@@ -1,7 +1,10 @@
 package com.example.demo.configuration;
 
+import com.example.demo.case_use.GetSheet;
+import com.example.demo.case_use.GetSheetImplement;
 import com.example.demo.case_use.GetTask;
 import com.example.demo.case_use.GetTaskImplement;
+import com.example.demo.service.SheetService;
 import com.example.demo.service.TaskService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,4 +16,9 @@ public class CaseUseConfiguration {
     GetTask getTask(TaskService taskService){
         return new GetTaskImplement(taskService);
     }
+
+    @Bean
+    GetSheet getSheet(SheetService sheetService){return new GetSheetImplement(sheetService);}
+
+
 }
