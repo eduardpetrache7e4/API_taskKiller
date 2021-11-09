@@ -68,7 +68,7 @@ public class TaskRestController {
     }
 
     @GetMapping("/pageable")
-    List<Task> getTaskPageable(@RequestParam int page, @RequestParam int size){
+    List<Task> getTaskPageable(@RequestParam int page, @RequestParam int size){ //pageable?page=0&size=2
         return taskRepository.findAll(PageRequest.of(page,size)).getContent();
     }
 
