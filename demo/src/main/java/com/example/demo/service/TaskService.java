@@ -47,8 +47,7 @@ public class TaskService {
 
     @Bean
     public void createSomeTasks(){
-
-
+        
         Task task1=new Task("hacer la comida", LocalDate.of(2020,2,5));
         Task task2=new Task("hacer otra cosa", LocalDate.of(2020,2,5));
         Task task3=new Task("hacer algo con mi vida", LocalDate.of(2020,2,5));

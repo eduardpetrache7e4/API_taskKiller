@@ -30,7 +30,4 @@ public class Sheet {
         this.name = name;
     }
 
-    public Sheet() {
-
-    }
 }
