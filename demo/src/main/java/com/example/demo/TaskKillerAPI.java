@@ -13,15 +13,15 @@ import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
-public class TaskKillerAPI{//implements CommandLineRunner
+
+public class TaskKillerAPI  {
 
     @Autowired
-    private TaskRepository taskRepository;
+    private static TaskService taskService;
 
-    @Autowired
-    private TaskService taskService;
-
-
+    public TaskKillerAPI(TaskService taskService) {
+        this.taskService = taskService;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(TaskKillerAPI.class, args);

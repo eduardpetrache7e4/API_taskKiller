@@ -3,7 +3,9 @@ package com.example.demo.case_use;
 import com.example.demo.entity.Sheet;
 import com.example.demo.entity.Task;
 import com.example.demo.service.SheetService;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UpdateSheet {
     private SheetService sheetService;
 

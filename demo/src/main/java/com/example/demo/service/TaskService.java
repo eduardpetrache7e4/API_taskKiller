@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.entity.Task;
 import com.example.demo.repository.TaskRepository;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -44,7 +45,9 @@ public class TaskService {
 
     }
 
+    @Bean
     public void createSomeTasks(){
+
 
         Task task1=new Task("hacer la comida", LocalDate.of(2020,2,5));
         Task task2=new Task("hacer otra cosa", LocalDate.of(2020,2,5));
