@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -8,6 +9,7 @@ import java.time.LocalDate;
 @Data
 @Entity
 @Table(name="Task")
+@RequiredArgsConstructor
 public class Task {
 
     @Id
@@ -30,10 +32,6 @@ public class Task {
         this.content = content;
         this.startDate = startDate;
         this.done=false;
-    }
-
-    public Task() {
-
     }
 
 
