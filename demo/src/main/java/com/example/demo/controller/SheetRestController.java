@@ -61,12 +61,12 @@ public class SheetRestController {
     @RequestMapping("/prueba")
     @ResponseBody
     public ResponseEntity<String>function(){
-        return new ResponseEntity("Hola desde el controller",HttpStatus.OK);
+        return new ResponseEntity("Hola desde el sheet controller",HttpStatus.OK);
     }
 
     @GetMapping("/pageable")
-    List<Sheet> getSheetPageable(@RequestParam int page, @RequestParam int size){ //pageable?page=0&size=2
-        return sheetRepository.findAll(PageRequest.of(page,size)).getContent();
+    List<Sheet> getSheetPageable(@RequestParam int sheet, @RequestParam int size){ //pageable?page=0&size=2
+        return sheetRepository.findAll(PageRequest.of(sheet,size)).getContent();
     }
 
 }
