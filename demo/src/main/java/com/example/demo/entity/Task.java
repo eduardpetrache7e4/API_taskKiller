@@ -25,8 +25,8 @@ public class Task {
     private boolean done;
 
     //una tarea puede estar solo en una hoja
-    @ManyToOne
-    private Sheet sheet;
+    //@ManyToOne
+   // private Sheet sheet;
 
     public Task(String content, LocalDate startDate) {
         this.content = content;
