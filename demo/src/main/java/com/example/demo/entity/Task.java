@@ -19,14 +19,23 @@ public class Task {
 
     @Column(length = 300)  //nombre de la columna y algunas caracteristicas
     private String content;
-
+    @Column
     private LocalDate startDate;
-
+    @Column
     private boolean done;
 
-    //una tarea puede estar solo en una hoja
     @ManyToOne
+    @JoinColumn(name = "sheet")
     private Sheet sheet;
+
+    public Sheet getSheet() {
+        return sheet;
+    }
+
+    public void setSheet(Sheet sheet) {
+        this.sheet = sheet;
+    }
+
 
     public Task(String content, LocalDate startDate) {
         this.content = content;

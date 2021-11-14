@@ -38,7 +38,10 @@ public class TaskRestController {
         this.taskRepository=taskRepository;
     }
 
-
+//getFunciona
+//delete Funciona
+//post Funciona sin sheet
+//put Funciona sin sheeet
 
     @GetMapping("/")
     List<Task> get(){
@@ -51,7 +54,7 @@ public class TaskRestController {
         return new ResponseEntity(createTask.save(newTask), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("({id}")
+    @DeleteMapping("/{id}")
     ResponseEntity deleteTask(@PathVariable Long id){
         deleteTask.remove(id);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
@@ -65,7 +68,7 @@ public class TaskRestController {
     @RequestMapping("/prueba")
     @ResponseBody
     public ResponseEntity<String>function(){
-        return new ResponseEntity("Hola desde el controller",HttpStatus.OK);
+        return new ResponseEntity("Hola desde el task controller",HttpStatus.OK);
     }
 
     @GetMapping("/pageable")
