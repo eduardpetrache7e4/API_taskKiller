@@ -45,6 +45,7 @@ public class TaskRestController {
         return getTask.getAll();
     }
 
+
     @PostMapping("/")
     ResponseEntity<Task> newTask(@RequestBody Task newTask){
         return new ResponseEntity(createTask.save(newTask), HttpStatus.CREATED);

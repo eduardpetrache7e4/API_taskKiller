@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -23,11 +24,11 @@ public class Sheet {
 
      //varias tareas pueden ser parte de una hoja
      @OneToMany(mappedBy = "sheet", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
-     @JsonManagedReference
+     @JsonManagedReference//@JsonIgnore
      private List<Task> tasks=new ArrayList<>();
 
      public Sheet(String name) {
         this.name = name;
     }
-    
+
 }
