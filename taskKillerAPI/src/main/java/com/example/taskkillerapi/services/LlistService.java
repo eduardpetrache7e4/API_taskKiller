@@ -2,6 +2,7 @@ package com.example.taskkillerapi.services;
 import com.example.taskkillerapi.entities.Llist;
 import com.example.taskkillerapi.entities.Task;
 import com.example.taskkillerapi.repositories.LlistRepository;
+import com.example.taskkillerapi.repositories.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,9 @@ public class LlistService {
 
         @Autowired //
         LlistRepository llistRepository;
+
+        @Autowired
+        TaskRepository taskRepository;
 
         public ArrayList<Llist> getLlists(){
             return(ArrayList<Llist>) llistRepository.findAll();
@@ -35,10 +39,11 @@ public class LlistService {
             }
         }
 
-        public Llist addTaskToList(Llist newList, Long id,Task task){
+        public Llist addTaskToList(Long id, Task task){
             return llistRepository.findById(id)
                     .map(
                             llist->{
+                                taskRepository.save(task);
                                 llist.addTaskToList(task);
                                 return llistRepository.save(llist);
                             }

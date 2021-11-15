@@ -1,6 +1,7 @@
 package com.example.taskkillerapi.controllers;
 
 import com.example.taskkillerapi.entities.Llist;
+import com.example.taskkillerapi.entities.Task;
 import com.example.taskkillerapi.services.LlistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,10 +38,10 @@ public class LlistController {
         return this.llistService.updateName(newLlist, id);
     }
 
-   // @PutMapping("/addTask/{id}")
-   // public Llist addTaskToList(@RequestBody Llist newLlist, @PathVariable Long id, Long task_id){
-   //     return this.llistService.updateName(newLlist, id);
-  //  }
+    @PutMapping("/addTask/{id}")
+    public Llist addTaskToList(@RequestBody Task newTask, @PathVariable Long id){
+        return this.llistService.addTaskToList(id,newTask);
+    }
 
 
 
