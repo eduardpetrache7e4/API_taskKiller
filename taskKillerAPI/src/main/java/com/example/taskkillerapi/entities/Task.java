@@ -26,9 +26,10 @@ public class Task {
     @JoinColumn(name = "list")
     private Llist llist;
 
-    public Task(String content) {
+    public Task(String content, Llist llist) {
         this.content = content;
         this.done = false;
+        this.llist=llist;
     }
 
 }
