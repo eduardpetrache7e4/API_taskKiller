@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name="Llist")
+@Table(name="list")
 @RequiredArgsConstructor
 public class Llist {
     @Id
@@ -24,10 +24,6 @@ public class Llist {
      @Column
      @OneToMany(mappedBy = "llist", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
      private List<Task> tasks=new ArrayList<>();
-
-    public Llist(String name) {
-        this.name = name;
-    }
 
     public void addTaskToList(Task task){
         tasks.add(task);

@@ -43,8 +43,8 @@ public class LlistService {
             return llistRepository.findById(id)
                     .map(
                             llist->{
-                                taskRepository.save(task);
                                 llist.addTaskToList(task);
+                                taskRepository.save(task);
                                 return llistRepository.save(llist);
                             }
                     ).get();
