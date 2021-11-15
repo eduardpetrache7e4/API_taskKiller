@@ -23,13 +23,8 @@ public class Task {
     private boolean done;
 
     @ManyToOne
-    @JoinColumn(name = "list")
+    @JoinColumn(name = "llist")
     private Llist llist;
-
-    public Task(String content, Llist llist) {
-        this.content = content;
-        this.done = false;
-        this.llist=llist;
-    }
+    
 
 }
