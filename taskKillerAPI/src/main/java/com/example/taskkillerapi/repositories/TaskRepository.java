@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface TaskRepository extends CrudRepository<Task, Long> {
 
-    public abstract Optional<Task> findById(Long id);
+    Optional<Task> findById(Long id);
 
 }

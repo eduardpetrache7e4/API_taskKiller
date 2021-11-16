@@ -22,7 +22,7 @@ public class Llist {
 
     //varias tareas pueden ser parte de una hoja    //@JsonManagedReference//@JsonIgnore
      @Column
-     @OneToMany(mappedBy = "llist", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+     @OneToMany(mappedBy = "list",cascade=CascadeType.ALL, fetch = FetchType.EAGER)
      private List<Task> tasks=new ArrayList<>();
 
     public void addTaskToList(Task task){
