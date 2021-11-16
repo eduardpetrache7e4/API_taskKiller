@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface LlistRepository extends CrudRepository<Llist, Long> {
 
-    public abstract Optional<Llist> findById(Long id);
+    Optional<Llist> findById(Long id);
 
 }

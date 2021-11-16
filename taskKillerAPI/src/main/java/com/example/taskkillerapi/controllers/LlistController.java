@@ -38,7 +38,7 @@ public class LlistController {
         return this.llistService.updateName(newLlist, id);
     }
 
-    @PutMapping("/addTask/{id}")
+    @PutMapping("/{id}/task")
     public Llist addTaskToList(@RequestBody Task newTask, @PathVariable Long id){
         return this.llistService.addTaskToList(id,newTask);
     }
