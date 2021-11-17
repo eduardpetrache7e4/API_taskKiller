@@ -1,5 +1,6 @@
 package com.example.taskkillerapi.controllers;
 
+import com.example.taskkillerapi.entities.Llist;
 import com.example.taskkillerapi.entities.Task;
 import com.example.taskkillerapi.services.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,13 @@ public class TaskController {
     public Optional<Task> getUsersById(@PathVariable("id") Long id){
         return taskService.findById(id);
     }
+    
+    @GetMapping("/list/{id}/task")
+    public ArrayList<Task> getTaskByList(@PathVariable("id") Long id){
+        return taskService.getTaskByList(id);
+    }
+
+
 
     @PostMapping
     public Task saveTask(@RequestBody Task task){

@@ -15,8 +15,8 @@ public class LlistService {
         @Autowired //
         LlistRepository llistRepository;
 
-        @Autowired
-        TaskRepository taskRepository;
+//        @Autowired
+//        TaskRepository taskRepository;
 
         public ArrayList<Llist> getLlists(){
             return(ArrayList<Llist>) llistRepository.findAll();
@@ -39,16 +39,18 @@ public class LlistService {
             }
         }
 
-        public Llist addTaskToList(Long id, Task task){
-            return llistRepository.findById(id)
-                    .map(
-                            llist->{
-                                llist.addTaskToList(task);
-                                taskRepository.save(task);
-                                return llistRepository.save(llist);
-                            }
-                    ).get();
-        }
+//
+//        public Llist addTaskToList(Long id, Task task){
+//            return llistRepository.findById(id)
+//                    .map(
+//                            llist->{
+//                                task.setList(llist);//añadimos lista a la tarea
+//                                taskRepository.save(task);
+//                                llist.addTaskToList(task); //añadimos tarea al arrayList de lista
+//                                return llistRepository.save(llist);
+//                            }
+//                    ).get();
+//        }
 
         public Llist updateName(Llist newLlist, Long id) {
             return llistRepository.findById(id)

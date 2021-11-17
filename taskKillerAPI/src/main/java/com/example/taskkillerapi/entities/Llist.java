@@ -14,18 +14,19 @@ import java.util.List;
 public class Llist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //se crea id unico
-    @Column(name="id_list", nullable = false, unique = true)  //nombre de la columna y algunas caracteristicas
+    @Column(name = "id_list", nullable = false, unique = true)  //nombre de la columna y algunas caracteristicas
     private Long id;
 
     @Column(length = 50)
     private String name;
 
-    //varias tareas pueden ser parte de una hoja    //@JsonManagedReference//@JsonIgnore
-     @Column
-     @OneToMany(mappedBy = "list",cascade=CascadeType.ALL, fetch = FetchType.EAGER)
-     private List<Task> tasks=new ArrayList<>();
+//    //varias tareas pueden ser parte de una hoja    //@JsonManagedReference//@JsonIgnore
+//     @Column
+//     @OneToMany(mappedBy = "list",cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+//     private List<Task> tasks=new ArrayList<>();
+//    public void addTaskToList(Task task){
+//        tasks.add(task);
+//    }
 
-    public void addTaskToList(Task task){
-        tasks.add(task);
-    }
+
 }
