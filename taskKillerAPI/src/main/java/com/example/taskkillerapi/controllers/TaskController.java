@@ -27,7 +27,7 @@ public class TaskController {
     public Optional<Task> getUsersById(@PathVariable("id") Long id){
         return taskService.findById(id);
     }
-    
+
     @GetMapping("/list/{id}/task")
     public ArrayList<Task> getTaskByList(@PathVariable("id") Long id){
         return taskService.getTaskByList(id);
@@ -43,6 +43,16 @@ public class TaskController {
     @PutMapping("/{id}")
     public Task updateTask(@RequestBody Task newTask, @PathVariable Long id){
        return this.taskService.updateContent(newTask, id);
+    }
+
+    @PutMapping("/{id}/done")
+    public Task checkTask(@RequestBody Boolean done, @PathVariable Long id){
+        return this.taskService.checkTask(done, id);
+    }
+
+    @PutMapping("/{id}/content")
+    public Task updateTaskContent(@RequestBody String newContent, @PathVariable Long id){
+        return this.taskService.updateTaskContent(newContent, id);
     }
 
     @DeleteMapping("/{id}")

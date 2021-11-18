@@ -50,18 +50,35 @@ public class TaskService {
         }
 
         public Task updateContent (Task newTask, Long id){
-            return
-                    taskRepository.findById(id)
+            return taskRepository.findById(id)
                             .map(
                                     task -> {
                                         task.setContent(newTask.getContent());
                                         return taskRepository.save(task);
                                     }
                             ).get();
-
         }
 
 
+    public Task checkTask(Boolean done, Long id) {
+         return taskRepository.findById(id)
+                .map(
+                        task -> {
+                            task.setDone(done);
+                            return taskRepository.save(task);
+                        }
+                ).get();
     }
+
+    public Task updateTaskContent(String newContent, Long id) {
+        return taskRepository.findById(id)
+                .map(
+                        task -> {
+                            task.setContent(newContent);
+                            return taskRepository.save(task);
+                        }
+                ).get();
+    }
+}
 
 
