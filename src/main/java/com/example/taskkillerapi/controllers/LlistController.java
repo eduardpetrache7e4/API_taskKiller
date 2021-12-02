@@ -18,21 +18,25 @@ public class LlistController {
     @Autowired
     LlistService llistService;
 
+    @CrossOrigin
     @GetMapping()  //http://localhost:8081/api/lists/
     public ArrayList<Llist> getUsers(){
         return llistService.getLlists();
     }
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public Optional<Llist> getUsersById(@PathVariable("id") Long id){
         return llistService.findById(id);
     }
 
+    @CrossOrigin
     @PostMapping
     public Llist saveLlist(@RequestBody Llist llist){
         return this.llistService.saveLlist(llist);
     }
 
+    @CrossOrigin
     @PutMapping("/{id}")
     public Llist updateLlist(@RequestBody Llist newLlist, @PathVariable Long id){
         return this.llistService.updateName(newLlist, id);

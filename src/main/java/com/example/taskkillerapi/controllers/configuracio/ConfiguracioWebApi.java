@@ -1,4 +1,4 @@
-package com.example.taskkillerapi.configuracio;
+package com.example.taskkillerapi.controllers.configuracio;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
