@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 public class TaskService {
 
-    @Autowired //
+    @Autowired
     TaskRepository taskRepository;
 
     public ArrayList<Task> getTasks() {
