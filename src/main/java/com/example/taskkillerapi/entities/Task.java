@@ -22,9 +22,9 @@ public class Task {
     @Column
     private boolean done;
 
-    @ManyToOne
-    @JoinColumn(name = "list")
-    private Llist list;
+//    @ManyToOne
+//    @JoinColumn(name = "list")
+//    private Llist list;
 
 
 
